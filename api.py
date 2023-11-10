@@ -1,12 +1,38 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
+import zipfile
+import os
+import shutil  # Importe o módulo shutil
+
 from flask_cors import CORS
 
 app = Flask(__name__)
 
 # Carregue o modelo treinado
-modelo = joblib.load('modelo_decision_tree.pkl')
+modelo = joblib.load("modelo_decision_tree.pkl")
+
+# Função para descompactar o arquivo ZIP e carregar os dados em um DataFrame
+def carregar_base_dados():
+    with zipfile.ZipFile('base_dados.zip', 'r') as zip_ref:
+        # Crie um diretório temporário para extrair os arquivos
+        temp_dir = 'temp_extracted_data'
+        os.makedirs(temp_dir, exist_ok=True)
+        zip_ref.extractall(temp_dir)
+
+    # Suponha que há apenas um arquivo CSV no diretório extraído
+    csv_file = os.path.join(temp_dir, os.listdir(temp_dir)[0])
+    
+    # Carregue o CSV em um DataFrame Pandas
+    df = pd.read_csv(csv_file)
+
+    # Remova o diretório temporário e todo o seu conteúdo
+    shutil.rmtree(temp_dir)
+
+    return df
+
+# Carregue a base de dados uma vez no início
+base_dados = carregar_base_dados()
 
 @app.route('/previsao', methods=['POST'])
 def fazer_previsao():
@@ -20,11 +46,8 @@ def fazer_previsao():
         meta = data['meta']
         restricao = data['restricao']
 
-        # Carregar a base de dados
-        df = pd.read_csv('base_dados.csv')
-        
-        # converte variáveis categóricas em numéricas usando codificação one-hot, em 1 True e 0 False
-        df_encoded = pd.get_dummies(df, columns=['gênero','meta','restricao'])
+        # Use a base de dados carregada
+        df_encoded = pd.get_dummies(base_dados, columns=['gênero','meta','restricao'])
         
         # Mapeia os níveis de classificação
         class_mapping = {
