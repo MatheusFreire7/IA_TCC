@@ -14,6 +14,8 @@ Antes de usar este aplicativo, você deve ter instalado no seu Computador:
 - **Flask**: Framework utilizado para criar a API, com o método de previsão do modelo de IA.
 - **flask_cors**: Essencial para a utilização de CORS na API, permitindo a integração com o Flutter.
 - **random**: Utilizado para gerar números aleatórios em um determinado intervalo para características da Base de Dados.
+- **zipfile**: Biblioteca para manipulação de arquivos zip, é usada para extrair dados da base de dados criada que está compactada.
+- **shutil**:  Biblioteca para operações de alto nível em arquivos e coleções de arquivos, usada para remover diretórios temporários e seu conteúdo.
 
 Esteja pronto para explorar o poder desta IA e integrá-la aos seus projetos fitness! 🏋️‍♂️✨
 
@@ -25,11 +27,10 @@ Esteja pronto para explorar o poder desta IA e integrá-la aos seus projetos fit
 
 2. **Instalar as Dependências do Projeto**:
  ``` bash
-   pip install scikit-learn joblib pandas flask flask_cors random csv
+   pip install scikit-learn joblib pandas flask flask_cors random csv zipfile shutil
 ```
-3. **Extraia o Arquivo "base_dados.csv.zip"**
- 
-4. **Execute a Api**:
+
+3. **Execute a Api**:
  ``` bash
    python api.py
 ```
