@@ -1,20 +1,23 @@
 # IA em Python para a classificação de Intensidade de Planos Fitness
 
 ## Sobre ℹ️
-Esta inteligência artificial foi construída com base no modelo de Árvore de Decisão da biblioteca scikit-learn. Ela faz uso de conjuntos de dados fictícios para treinamento e testes. Para facilitar a integração desta IA em um futuro aplicativo de fitness desenvolvido em Flutter, criamos uma API usando Flask.
+Esta **Inteligência Artificial** foi desenvolvida utilizando o modelo de **Árvore de Decisão** da biblioteca scikit-learn. Utilizando conjuntos de dados fictícios para treinamento e testes, a IA é capaz de classificar a intensidade de planos fitness com precisão. Para facilitar a integração desta IA em um Aplicativo de fitness desenvolvido em Flutter, uma API foi criada usando **Flask**.
 
 ## Pré-requisitos 🛠️
 
 Antes de usar este aplicativo, você deve ter instalado no seu Computador:
 
-- **Python3**: Linguagem de Programação
-- **sklearn**: Bilioteca usada para a criação da IA
-- **joblib**: Salvar o modelo de IA
-- **pandas**: Manipulação de arquivos CSV
-- **Flask**: Framework usado para criar uma Api com o método previsão do modelo de IA criado
-- **flask_cors**: É necessário a utilização de cors na Api para integrar com o Flutter
-- **random**: É usado para gerar um número alatório em um certo range em características da Base de Dados
+- **Python3**: Linguagem de programação utilizada.
+- **sklearn**: Biblioteca fundamental para a construção do modelo de IA.
+- **joblib**: Necessário para salvar o modelo de IA.
+- **pandas**: Utilizada para a manipulação de arquivos CSV.
+- **Flask**: Framework utilizado para criar a API, com o método de previsão do modelo de IA.
+- **flask_cors**: Essencial para a utilização de CORS na API, permitindo a integração com o Flutter.
+- **random**: Utilizado para gerar números aleatórios em um determinado intervalo para características da Base de Dados.
+- **zipfile**: Biblioteca para manipulação de arquivos zip, é usada para extrair dados da base de dados criada que está compactada.
+- **shutil**:  Biblioteca para operações de alto nível em arquivos e coleções de arquivos, usada para remover diretórios temporários e seu conteúdo.
 
+Esteja pronto para explorar o poder desta IA e integrá-la aos seus projetos fitness! 🏋️‍♂️✨
 
 ## Como Usar  ▶️
 1. **Clone o repositório**:
@@ -24,11 +27,10 @@ Antes de usar este aplicativo, você deve ter instalado no seu Computador:
 
 2. **Instalar as Dependências do Projeto**:
  ``` bash
-   pip install scikit-learn joblib pandas flask flask_cors random csv
+   pip install scikit-learn joblib pandas flask flask_cors random csv zipfile shutil
 ```
-3. **Extraia o Arquivo "base_dados.csv.zip"**
- 
-4. **Execute a Api**:
+
+3. **Execute a Api**:
  ``` bash
    python api.py
 ```
