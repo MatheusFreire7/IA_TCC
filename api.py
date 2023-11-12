@@ -3,8 +3,7 @@ import joblib
 import pandas as pd
 import zipfile
 import os
-import shutil  # Importe o módulo shutil
-
+import shutil
 from flask_cors import CORS
 
 app = Flask(__name__)
