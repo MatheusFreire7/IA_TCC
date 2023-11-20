@@ -19,7 +19,6 @@ def carregar_base_dados():
         os.makedirs(temp_dir, exist_ok=True)
         zip_ref.extractall(temp_dir)
 
-    # Suponha que há apenas um arquivo CSV no diretório extraído
     csv_file = os.path.join(temp_dir, os.listdir(temp_dir)[0])
     
     # Carregue o CSV em um DataFrame Pandas
