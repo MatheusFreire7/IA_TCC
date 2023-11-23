@@ -35,6 +35,10 @@ Esteja pronto para explorar o poder desta IA e integrá-la aos seus projetos fit
    python api.py
 ```
 
+## Repositórios Relacionados 🔄
+Utilizamos a Api Flask da IA neste Aplicativo:
+- [Aplicativo Flutter](https://github.com/MatheusFreire7/flutter_TCC)
+
 ## **Autores**
    **Luiz Henrique Parolim Domingues**     [Github](https://github.com/LuizHPDomingues2005)<br>
    **Matheus Henrique de Oliveira Freire** [Github](https://github.com/MatheusFreire7)
